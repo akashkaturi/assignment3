@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="content">
+  <h1>{{title.toUpperCase()}}</h1>
+  <div class="convert-to">
+    <input type="text" [(ngModel)]="amount" placeholder="Enter Amount">
+    <div class="selection-cont">
+      <select #c1 name="" id= "country1" (change)="change(c1.value)">
+        <option value="INR">Indian Rupee</option>
+        <option value="USD">US Dollar</option>
+        <option value="EUR">Euro</option>
+        <option value="AED">UAE Dirham</option>
+        <option value="JPY">Japanese Yen</option>
+      </select>
+      <p>to</p>
+      <select #c2 name="" id="country2" (change)="toCountry(c2.value)">
+        <option value="INR">Indian Rupee</option>
+        <option value="USD">US Dollar</option>
+        <option value="EUR">Euro</option>
+        <option value="AED">UAE Dirham</option>
+        <option value="JPY">Japanese Yen</option>
+      </select>
+  </div>
+  <div>
+    <button class="btn" (click)="convert()">Submit</button>
+  </div>
+  <div *ngIf="show" class="result">
+    {{this.r}} {{base}} = {{result}} {{country2}}
+  </div>
+  </div>
+</div>
